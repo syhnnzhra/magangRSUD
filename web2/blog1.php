@@ -333,7 +333,7 @@
 									</div>
 								</div>
 								<div class="entry-content">
-									<p>The movie star the professor and Mary Ann here on Gilligans Isle You wanna be where you can see our troubles are all the same And you know where you were then. Girls were girls and men were men. Mister we could use a man like Herbert Hoover again would see the biggest gift would be from me and the card attached would <span>[...]</span></p>
+									<p><?php echo $a ['caption'];?></span></p>
 								</div>
 								<div class="entry-meta"> 
 									<div class="post-date"><a href="#" title="Date"><i class="fa fa-calendar"></i><?php echo $a ['tgl'];?></a></div>
