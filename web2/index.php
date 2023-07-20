@@ -215,6 +215,7 @@
 								<li><a href="#" title="Blog 1">Ketersediaan Tempat Tidur</a></li>
 								<li><a href="#" title="Blog 2">Jadwal Dokter</a></li>
 								<li><a href="#" title="Blog Post">Hak Dan Kewajiban Pasien</a></li>
+								<li><a href="blog1.php" title="Blog Post">Berita</a></li>
 							<li class="dropdown active">
 							<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Home" href="index.html">Standar Pelayanan</a>
 							<i class="ddl-switch fa fa-angle-down"></i>

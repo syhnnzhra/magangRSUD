@@ -1,3 +1,10 @@
+<?php
+    require 'function.php';
+    $news = query("SELECT * FROM berita");
+    // if(isset($_POST["cari"])) {
+    //     $dokter = caridokter($_POST["keyword"]);
+    // }
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
@@ -300,6 +307,7 @@
 				</div>
 			</div><!-- Page Banner /- -->
 			
+			<!-- isi daftar berita -->
 			<!-- Blog Section -->
 			<div class="blog-section blog-list container-fluid no-left-padding no-right-padding">
 				<!-- Container -->
@@ -308,13 +316,20 @@
 					<div class="row">
 						<!-- Content Area -->
 						<div class="content-area col-md-9 col-sm-8 col-xs-12">
+							<?php
+								$i=1;
+								foreach ($news as $a) :
+							?>
 							<div class="type-post">
 								<div class="entry-cover">
 									<a title="Blog" href="blog-post.html">
 										<img alt="blog" src="http://placehold.it/870x310" />
 									</a>
 									<div class="entry-header">
-										<h3 class="entry-title"><a title="Well the first thing you know old Jeds a millionaire speak Beats all you've ever saw been in trouble with the law since the day they" href="blog-post.html">Well the first thing you know old Jeds a millionaire speak Beats all you've ever saw been in trouble with the law since the day they</a></h3>
+										<h3 class="entry-title"><a title="Well the first thing you know old Jeds a millionaire speak Beats all you've ever saw been in trouble with the law since the day they" href="blog-post.html">
+											<!-- contoh masukin nya -->
+											<?php echo $a ['judul'];?>
+										</a></h3>
 									</div>
 								</div>
 								<div class="entry-content">
@@ -336,102 +351,11 @@
 									</div>
 								</div>
 							</div>
+							<?php
+                                    endforeach;
+							?>
 							
-							<div class="type-post">
-								<div class="entry-cover">
-									<a title="Blog" href="blog-post.html">
-										<img alt="blog" src="http://placehold.it/870x310" />
-									</a>
-									<div class="entry-header">
-										<h3 class="entry-title"><a title="Girls were girls and men were men Mister we could use a man like Herbert Hoover again then one day he was playing at the ground" href="blog-post.html">Girls were girls and men were men Mister we could use a man like Herbert Hoover again then one day he was playing at the ground</a></h3>
-									</div>
-								</div>
-								<div class="entry-content">
-									<p>Sclemeel schlemazel hasenfeffer incorporated. Well the first thing you know ol' Jeds a millionaire. Kinfolk said Jed move away from there. It's time to put on makeup. It's time to dress up right. It's time to raise the curtain on the Muppet Show tonight. Just two good ol' boys Never meanin' no harm. Beats all you've ever saw been trouble<span>[...]</span></p>
-								</div>
-								<div class="entry-meta"> 
-									<div class="post-date"><a href="#" title="Date"><i class="fa fa-calendar"></i>28 Jan 2017</a></div>
-									<div class="byline"><a href="#" title="adminol"><i class="fa fa-user"></i>Admin</a></div>
-									<div class="post-comment"><a href="#" title="16 Comments"><i class="fa fa-comments-o"></i>16 Comments</a></div>
-									<div class="post-like"><a href="#" title="Favorites 17"><i class="fa fa-heart-o"></i>Favorites 17</a></div>
-									<div class="post-share">
-										<span><i class="fa fa-share-alt"></i>Share</span>
-										<ul>
-											<li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#" title="Google"><i class="fa fa-google-plus"></i></a></li>
-											<li><a href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
 							
-							<div class="type-post">
-								<div class="entry-cover">
-									<a title="Blog" href="blog-post.html">
-										<img alt="blog" src="http://placehold.it/870x310" />
-									</a>
-									<div class="entry-header">
-										<h3 class="entry-title"><a title="Come and listen to a story about a man named Jed - a poor mountaineer barely kept his family fed The first mate and his Skipper too" href="blog-post.html">Come and listen to a story about a man named Jed - a poor mountaineer barely kept his family fed The first mate and his Skipper too</a></h3>
-									</div>
-								</div>
-								<div class="entry-content">
-									<p>The movie star the professor and Mary Ann here on Gilligans Isle You wanna be where you can see our troubles are all the same And you know where you were then. Girls were girls and men were men. Mister we could use a man like Herbert Hoover again would see the biggest gift would be from me and the card attached would <span>[...]</span></p>
-								</div>
-								<div class="entry-meta"> 
-									<div class="post-date"><a href="#" title="Date"><i class="fa fa-calendar"></i>26 Dec 2016</a></div>
-									<div class="byline"><a href="#" title="adminol"><i class="fa fa-user"></i>Admin</a></div>
-									<div class="post-comment"><a href="#" title="10 Comments"><i class="fa fa-comments-o"></i>10 Comments</a></div>
-									<div class="post-like"><a href="#" title="Favorites 14"><i class="fa fa-heart-o"></i>Favorites 14</a></div>
-									<div class="post-share">
-										<span><i class="fa fa-share-alt"></i>Share</span>
-										<ul>
-											<li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#" title="Google"><i class="fa fa-google-plus"></i></a></li>
-											<li><a href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							
-							<div class="type-post">
-								<div class="entry-cover">
-									<a title="Blog" href="blog-post.html">
-										<img alt="blog" src="http://placehold.it/870x310" />
-									</a>
-									<div class="entry-header">
-										<h3 class="entry-title"><a title="to explore strange new worlds to seek out new life and new civilizations to boldly go where no man has gone before revolution came in" href="blog-post.html">to explore strange new worlds to seek out new life and new civilizations to boldly go where no man has gone before revolution came in</a></h3>
-									</div>
-								</div>
-								<div class="entry-content">
-									<p>Sclemeel schlemazel hasenfeffer incorporated. Well the first thing you know ol' Jeds a millionaire. Kinfolk said Jed move away from there. It's time to put on makeup. It's time to dress up right. It's time to raise the curtain on the Muppet Show tonight. Just two good ol' boys Never meanin' no harm. Beats all you've ever saw been trouble <span>[...]</span></p>
-								</div>
-								<div class="entry-meta"> 
-									<div class="post-date"><a href="#" title="Date"><i class="fa fa-calendar"></i>28 Jan 2017</a></div>
-									<div class="byline"><a href="#" title="adminol"><i class="fa fa-user"></i>Admin</a></div>
-									<div class="post-comment"><a href="#" title="12 Comments"><i class="fa fa-comments-o"></i>12 Comments</a></div>
-									<div class="post-like"><a href="#" title="Favorites 18"><i class="fa fa-heart-o"></i>Favorites 18</a></div>
-									<div class="post-share">
-										<span><i class="fa fa-share-alt"></i>Share</span>
-										<ul>
-											<li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#" title="Google"><i class="fa fa-google-plus"></i></a></li>
-											<li><a href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<nav class="ow-pagination">
-								<ul class="pagination">
-									<li><a href="#"><i class="fa fa-angle-double-left"></i>Prev</a></li>
-									<li><a href="#">01</a></li>
-									<li><a href="#">02</a></li>
-									<li><a href="#">03</a></li>
-									<li><a href="#">Next<i class="fa fa-angle-double-right"></i></a></li>
-								</ul>
-							</nav>
 						</div><!-- Content Area /- -->
 						<!-- Widget Area -->
 						<div class="col-md-3 col-sm-4 col-xs-12 widget-area">
