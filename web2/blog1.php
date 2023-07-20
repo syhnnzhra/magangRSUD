@@ -132,7 +132,7 @@
 				<!-- Container -->
 				<div class="container">
 					<div class="logo mobile">
-						<a class="navbar-brand mobile-hide" href="index.html">Health Kare<span>Professional Medi care</span></a>
+						<a class="navbar-brand mobile-hide" href="index.php">Health Kare<span>Professional Medi care</span></a>
 					</div>
 					<div class="contact-block">
 						<p><i class="fa fa-clock-o"></i>We are Near by You <span>Melbourne - Australia</span></p>
@@ -322,7 +322,7 @@
 							?>
 							<div class="type-post">
 								<div class="entry-cover">
-									<a title="Blog" href="blog-post.html">
+									<a title="Blog" href="blog-post.php?id_berita=<?php echo$a['id_berita'];?>">
 										<img alt="blog" src="assets/images/<?php echo $a ['gambar'];?>" width="870px" height="310px"/>
 									</a>
 									<div class="entry-header">

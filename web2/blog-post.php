@@ -1,3 +1,9 @@
+<?php
+	require 'function.php';
+    $id_berita = $_GET["id_berita"];
+    $berita = query("SELECT * FROM berita WHERE id_berita = $id_berita")[0];
+	// var_dump($berita);
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
@@ -125,7 +131,7 @@
 				<!-- Container -->
 				<div class="container">
 					<div class="logo mobile">
-						<a class="navbar-brand mobile-hide" href="index.html">Health Kare<span>Professional Medi care</span></a>
+						<a class="navbar-brand mobile-hide" href="index.php">Health Kare<span>Professional Medi care</span></a>
 					</div>
 					<div class="contact-block">
 						<p><i class="fa fa-clock-o"></i>We are Near by You <span>Melbourne - Australia</span></p>
@@ -310,9 +316,9 @@
 						<div class="content-area col-md-9 col-sm-8 col-xs-12">
 							<article class="type-post">
 								<div class="entry-cover">
-									<img alt="blog" src="http://placehold.it/870x360" />
+									<img alt="blog" src="assets/images/maintance.png" />
 									<div class="entry-header">
-										<h3 class="entry-title">Well the first thing you know old Jeds a millionaire speak Beats all you've ever saw been in trouble with the law since the day they</h3>
+										<h3 class="entry-title"><? echo $berita['judul'];?></h3>
 									</div>
 								</div>
 								<div class="entry-content">
