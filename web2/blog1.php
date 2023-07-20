@@ -323,7 +323,7 @@
 							<div class="type-post">
 								<div class="entry-cover">
 									<a title="Blog" href="blog-post.html">
-										<img alt="blog" src="http://placehold.it/870x310" />
+										<img alt="blog" src="assets/images/<?php echo $a ['gambar'];?>" width="870px" height="310px"/>
 									</a>
 									<div class="entry-header">
 										<h3 class="entry-title"><a title="Well the first thing you know old Jeds a millionaire speak Beats all you've ever saw been in trouble with the law since the day they" href="blog-post.html">
@@ -336,7 +336,7 @@
 									<p>The movie star the professor and Mary Ann here on Gilligans Isle You wanna be where you can see our troubles are all the same And you know where you were then. Girls were girls and men were men. Mister we could use a man like Herbert Hoover again would see the biggest gift would be from me and the card attached would <span>[...]</span></p>
 								</div>
 								<div class="entry-meta"> 
-									<div class="post-date"><a href="#" title="Date"><i class="fa fa-calendar"></i>03 Feb 2017</a></div>
+									<div class="post-date"><a href="#" title="Date"><i class="fa fa-calendar"></i><?php echo $a ['tgl'];?></a></div>
 									<div class="byline"><a href="#" title="adminol"><i class="fa fa-user"></i>Admin</a></div>
 									<div class="post-comment"><a href="#" title="12 Comments"><i class="fa fa-comments-o"></i>12 Comments</a></div>
 									<div class="post-like"><a href="#" title="Favorites 18"><i class="fa fa-heart-o"></i>Favorites 18</a></div>
