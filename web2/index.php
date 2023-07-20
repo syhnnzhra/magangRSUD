@@ -125,7 +125,7 @@
 				<!-- Container -->
 				<div class="container">
 					<div class="logo mobile">
-						<a class="navbar-brand mobile-hide" href="index.html">RSUD Cibabat<span>Professional Medi care</span></a>
+						<a class="navbar-brand mobile-hide" href="index.php">RSUD Cibabat<span>Professional Medi care</span></a>
 					</div>
 					<div class="contact-block">
 						<p><i class="fa fa-clock-o"></i>Kami Dekat Dengan Anda <span>Cimahi - Jawa Barat</span></p>

@@ -1,3 +1,8 @@
+<?php
+	require 'function.php';
+    $id_berita = $_GET["id_berita"];
+    $berita = query("SELECT * FROM berita WHERE id_berita = $id_berita")[0];
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
@@ -125,7 +130,7 @@
 				<!-- Container -->
 				<div class="container">
 					<div class="logo mobile">
-						<a class="navbar-brand mobile-hide" href="index.html">Health Kare<span>Professional Medi care</span></a>
+						<a class="navbar-brand mobile-hide" href="index.php">Health Kare<span>Professional Medi care</span></a>
 					</div>
 					<div class="contact-block">
 						<p><i class="fa fa-clock-o"></i>We are Near by You <span>Melbourne - Australia</span></p>
