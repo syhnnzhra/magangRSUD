@@ -307,6 +307,7 @@
 			<!-- Page Banner -->
 			<div class="page-banner contact-banner container-fluid no-padding">
 				<div class="page-banner-content">
+<<<<<<< HEAD
 					<h3> Dari  Fakta <span> Hingga tren </span></h3>
 					<p>Berita terkini dan terbaru dari peristiwa, kecelakaan, hukum, berita unik yang terjadi di Kota Cimahi </P>
 					<!-- <div class="section-header">
@@ -314,6 +315,12 @@
 							<p>Fasilitas yang terdapat di RSUD Cibabat Cimahi</p> -->
 					<div class="banner-content container-fluid no-padding">
 				<!-- <p>Berita terkini dan terbaru dari peristiwa, kecelakaan, hukum, berita unik yang terjadi di Kota Cimahi </P> -->
+=======
+					<h3>News <span>Updates</span></h3>
+					<p><?php echo $berita['caption'];?></p>
+				</div>
+				<div class="banner-content container-fluid no-padding">
+>>>>>>> 27112ea671826ebf13d67efe44b431ba91de21ee
 					<div class="container">
 						<ol class="breadcrumb">
 							<li><a href="index.html">Home</a></li>							
@@ -341,7 +348,7 @@
 									</div>
 								</div>
 								<div class="entry-content">
-									<p class="text-center"> <?php echo str_replace("\n\n", "</p><p>", $paragraphs); ?></p>
+									<p class="text-left"> <?php echo str_replace("\n\n", "</p><p>", $paragraphs); ?></p>
 									<!-- <p class="text-center">The movie star the professor and Mary Ann here on Gilligans Isle You wanna be <b>where you can see</b> our troubles are all the same And you know where you were then. <span>Girls were girls</span> and men were men. Mister we could use a man like Herbert Hoover again would see the biggest gift would be from <i>me and the card</i> attached there.</p> -->
 									<div class="row">
 										<div class="col-md-5 col-sm-12 col-xs-12 blog-client-left">
