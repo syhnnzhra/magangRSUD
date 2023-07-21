@@ -333,7 +333,7 @@
 									</div>
 								</div>
 								<div class="entry-content">
-									<p> <?php echo $a ['berita'];?> <span>[...]</span></p>
+									<p><?php echo $a ['caption'];?></span></p>
 								</div>
 								<div class="entry-meta"> 
 									<div class="post-date"><a href="#" title="Date"><i class="fa fa-calendar"></i><?php echo $a ['tgl'];?></a></div>
