@@ -19,7 +19,6 @@
 	$teks = $berita['berita'];
 	$paragraphs = splitTextToParagraphs($teks, 50);
 	// echo $paragraphs;
-	// var_dump($berita);
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
@@ -333,10 +332,9 @@
 						<div class="content-area col-md-9 col-sm-8 col-xs-12">
 							<article class="type-post">
 								<div class="entry-cover">
-									<img alt="blog" src="assets/images/maintance.png" />
+									<img alt="blog" src="assets/images/<?php echo $berita['gambar'];?>" width="870px" height="310px"/>
 									<div class="entry-header">
 										<h3 class="entry-title"><?php echo $berita['judul'];?></h3>
-										<h3 class="entry-title"><? echo $berita['judul'];?></h3>
 									</div>
 								</div>
 								<div class="entry-content">
