@@ -134,8 +134,8 @@
 						<a class="navbar-brand mobile-hide" href="index.php">Health Kare<span>Professional Medi care</span></a>
 					</div>
 					<div class="contact-block">
-						<p><i class="fa fa-clock-o"></i>We are Near by You <span>Melbourne - Australia</span></p>
-						<p><i class="fa fa-phone"></i>We Feel Happy to Talk<span><a href="tel:(01)9876543210" title="(01) 98 765 432 10">(01) 98 765 432 10</a></span></p>
+						<p><i class="fa fa-clock-o"></i>We are Near by You <span>JAWA BARAT,CIMAHI</span></p>
+						<p><i class="fa fa-phone"></i>CALL CENTER<span><a href="tel:(022)6652025" title="(022) 66 520 25">(022) 66 520 25</a></span></p>
 					</div>
 				</div><!-- Container /- -->
 			</div><!-- Logo Block -->
@@ -291,10 +291,13 @@
 			<!-- Page Banner -->
 			<div class="page-banner contact-banner container-fluid no-padding">
 				<div class="page-banner-content">
-					<h3>News <span>Updates</span></h3>
-					<p>The mate was a mighty sailing man the skipper brave and sure five passengers set sail that day for a three hour tour a three hour tour being thank you for a friend up through the ground came a bubbling</p>
-				</div>
-				<div class="banner-content container-fluid no-padding">
+					<h3> Dari  Fakta <span> Hingga tren </span></h3>
+					<p>Berita terkini dan terbaru dari peristiwa, kecelakaan, hukum, berita unik yang terjadi di Kota Cimahi </P>
+					<!-- <div class="section-header">
+							<h3>RSUD<span>CIBABAT</span></h3>
+							<p>Fasilitas yang terdapat di RSUD Cibabat Cimahi</p> -->
+					<div class="banner-content container-fluid no-padding">
+				<!-- <p>Berita terkini dan terbaru dari peristiwa, kecelakaan, hukum, berita unik yang terjadi di Kota Cimahi </P> -->
 					<div class="container">
 						<ol class="breadcrumb">
 							<li><a href="index.html">Home</a></li>							
