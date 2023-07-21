@@ -352,7 +352,7 @@
 								</div>
 							</div>
 							<?php
-                                    endforeach;
+								endforeach;
 							?>
 							
 							

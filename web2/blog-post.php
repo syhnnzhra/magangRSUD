@@ -2,6 +2,23 @@
 	require 'function.php';
     $id_berita = $_GET["id_berita"];
     $berita = query("SELECT * FROM berita WHERE id_berita = $id_berita")[0];
+	// $result    =mysqli_fetch_array($berita);
+
+	function splitTextToParagraphs($text, $sentenceCountPerParagraph = 50) {
+		$sentences = preg_split('/(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s/', $text, -1, PREG_SPLIT_NO_EMPTY);
+		$paragraphs = array_chunk($sentences, $sentenceCountPerParagraph);
+		$result = '';
+		
+		foreach ($paragraphs as $paragraph) {
+			$result .= implode(' ', $paragraph) . "\n\n";
+		}
+		
+		return $result;
+	}
+
+	$teks = $berita['berita'];
+	$paragraphs = splitTextToParagraphs($teks, 50);
+	// echo $paragraphs;
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
@@ -317,11 +334,12 @@
 								<div class="entry-cover">
 									<img alt="blog" src="http://placehold.it/870x360" />
 									<div class="entry-header">
-										<h3 class="entry-title">Well the first thing you know old Jeds a millionaire speak Beats all you've ever saw been in trouble with the law since the day they</h3>
+										<h3 class="entry-title"><?php echo $berita['judul'];?></h3>
 									</div>
 								</div>
 								<div class="entry-content">
-									<p class="text-center">The movie star the professor and Mary Ann here on Gilligans Isle You wanna be <b>where you can see</b> our troubles are all the same And you know where you were then. <span>Girls were girls</span> and men were men. Mister we could use a man like Herbert Hoover again would see the biggest gift would be from <i>me and the card</i> attached there.</p>
+									<p class="text-center"> <?php echo str_replace("\n\n", "</p><p>", $paragraphs); ?></p>
+									<!-- <p class="text-center">The movie star the professor and Mary Ann here on Gilligans Isle You wanna be <b>where you can see</b> our troubles are all the same And you know where you were then. <span>Girls were girls</span> and men were men. Mister we could use a man like Herbert Hoover again would see the biggest gift would be from <i>me and the card</i> attached there.</p> -->
 									<div class="row">
 										<div class="col-md-5 col-sm-12 col-xs-12 blog-client-left">
 											<img src="http://placehold.it/328x309" alt="blog-post" />
