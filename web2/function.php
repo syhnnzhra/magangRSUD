@@ -17,4 +17,20 @@
         return $rows;
     }
 
+    function komentar($data) {
+        $conn = koneksi();
+
+        $nama = htmlspecialchars($data["nama"]);
+        $email = htmlspecialchars($data["email"]);
+        $komentar = htmlspecialchars($data["komentar"]);
+        $tgl = htmlspecialchars($data["tgl"]);
+
+        $query = "INSERT INTO `komentar` (`id_komentar`, `nama`, `email`, `komentar`, `tgl`) VALUES (NULL, '$nama', '$email', '$komentar', '$tgl');";
+
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+    
+    }
+
 ?>
