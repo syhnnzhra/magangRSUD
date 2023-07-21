@@ -2,7 +2,18 @@
 	require 'function.php';
     $id_berita = $_GET["id_berita"];
     $berita = query("SELECT * FROM berita WHERE id_berita = $id_berita")[0];
+    $komentar = query("SELECT * FROM komentar");
 	// $result    =mysqli_fetch_array($berita);
+
+if(isset($_POST["submit"])) {
+        // jalankan fungsi tambah()
+        if(komentar($_POST) > 0) {
+            echo "<script>
+            alert('data berhasil ditambahkan');
+            window.location.href = window.location.href;
+            </script>";
+        }
+    }
 
 	function splitTextToParagraphs($text, $sentenceCountPerParagraph = 50) {
 		$sentences = preg_split('/(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s/', $text, -1, PREG_SPLIT_NO_EMPTY);
@@ -292,7 +303,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<button title="Submit Request" type="submit">Submit Request</button>
+									<button title="Submit Request" type="submit" name="submit" value="simpan"> Submit Request</button>
 								</div>
 							</form>
 						</div>
@@ -403,15 +414,18 @@
 							<!-- Comment Area -->
 							<div id="comments" class="comments-area">
 								<h3 class="section-title"><i class="icon icon-MessageRight"></i>User <span>Comments</span></h3>
+								<?php
+									foreach ($komentar as $tokomen) :
+								?>
 								<ol class="comment-list">
 									<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1 parent">
 										<div class="comment-body">
 											<footer class="comment-meta">
 												<div class="comment-author vcard">
 													<img alt="img" src="http://placehold.it/83x83" class="avatar avatar-72 photo"/>
-													<b class="fn">JC Williams</b>
+													<b class="fn"><?php echo $tokomen ['nama'];?></b>
 													<div class="comment-metadata">
-														<a href="#">12 Dec, 2017</a>
+														<a href="#"><?php echo $tokomen ['tgl'];?></a>
 														<div class="reply">
 															<a rel="nofollow" class="comment-reply-link" href="#"><i class="fa fa-reply"></i>Reply</a>
 														</div>
@@ -422,59 +436,26 @@
 												<p>Today still wanted by the government they survive as soldiers of fortune. Thank you for being a friend to Travelled down the road and back again. Your heart is true you are.</p>
 											</div>
 										</div>
-										<ol class="children">
-											<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2 parent">
-												<div class="comment-body">
-													<footer class="comment-meta">
-														<div class="comment-author vcard">
-															<img alt="img" src="http://placehold.it/83x83" class="avatar avatar-72 photo"/>
-															<b class="fn">Ave Merlin</b>
-															<div class="comment-metadata">
-																<a href="#">12 Dec, 2017</a>
-																<div class="reply">
-																	<a rel="nofollow" class="comment-reply-link" href="#"><i class="fa fa-reply"></i>Reply</a>
-																</div>
-															</div>
-														</div>
-													</footer>
-													<div class="comment-content">
-														<p>Crack commando unit was sent to prison by a military court for a crime they didn't commit these men promptly escaped from a maximum security.</p>
-													</div>
-												</div>
-											</li>
-										</ol>
-										<div class="comment-body">
-											<footer class="comment-meta">
-												<div class="comment-author vcard">
-													<img alt="img" src="http://placehold.it/83x83" class="avatar avatar-72 photo"/>
-													<b class="fn">Mike Steve</b>
-													<div class="comment-metadata">
-														<a href="#">05 Feb 2017 </a>
-														<div class="reply">
-															<a rel="nofollow" class="comment-reply-link" href="#"><i class="fa fa-reply"></i>Reply</a>
-														</div>
-													</div>
-												</div>
-											</footer>
-											<div class="comment-content">
-												<p>The first mate and his Skipper too will do their very best to make the others comfortable in their tropic island nest. Said Californ'y is the place you ought to be so they loaded.</p>
-											</div>
-										</div>
 									</li>
 								</ol><!-- .comment-list -->
+									<?php
+										endforeach;
+									?>
 								<!-- Comment Form -->
 								<div id="respond" class="comment-respond">
 									<h3 id="reply-title" class="comment-reply-title section-title"><i class="icon icon-Typing"></i>Your <span>Comments</span></h3>
 									<form method="post" id="commentform" class="comment-form">
+										<input type="hidden" name="id_komentar">
 										<p class="comment-form-author">
-											<input id="author" name="author" placeholder="Your Name" required="required" type="text"/>
+											<input id="author" name="nama" placeholder="Your Name" required="required" type="text"/>
 										</p>
 										<p class="comment-form-email">
 											<input id="email" name="email" placeholder=" Your Email" required="required" type="email"/>
 										</p>
 										<p class="comment-form-comment">
-											<textarea id="comment" name="comment" placeholder="Write Your Comments..." rows="8" required="required"></textarea>
+											<textarea id="comment" name="komentar" placeholder="Write Your Comments..." rows="8" required="required"></textarea>
 										</p>
+										<input type="hidden" name="tgl" value="2023-11-25">
 										<p class="form-submit">
 											<input name="submit" class="submit" title="Post Comment" value="Post Comment" type="submit"/>
 										</p>
