@@ -308,7 +308,7 @@
 			<div class="page-banner contact-banner container-fluid no-padding">
 				<div class="page-banner-content">
 					<h3>News <span>Updates</span></h3>
-					<p>The mate was a mighty sailing man the skipper brave and sure five passengers set sail that day for a three hour tour a three hour tour being thank you for a friend up through the ground came a bubbling</p>
+					<p><?php echo $berita['caption'];?></p>
 				</div>
 				<div class="banner-content container-fluid no-padding">
 					<div class="container">
@@ -338,7 +338,7 @@
 									</div>
 								</div>
 								<div class="entry-content">
-									<p class="text-center"> <?php echo str_replace("\n\n", "</p><p>", $paragraphs); ?></p>
+									<p class="text-left"> <?php echo str_replace("\n\n", "</p><p>", $paragraphs); ?></p>
 									<!-- <p class="text-center">The movie star the professor and Mary Ann here on Gilligans Isle You wanna be <b>where you can see</b> our troubles are all the same And you know where you were then. <span>Girls were girls</span> and men were men. Mister we could use a man like Herbert Hoover again would see the biggest gift would be from <i>me and the card</i> attached there.</p> -->
 									<div class="row">
 										<div class="col-md-5 col-sm-12 col-xs-12 blog-client-left">
