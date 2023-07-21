@@ -2,6 +2,7 @@
 	require 'function.php';
     $id_berita = $_GET["id_berita"];
     $berita = query("SELECT * FROM berita WHERE id_berita = $id_berita")[0];
+    $author = query("SELECT * FROM author");
 	// $result    =mysqli_fetch_array($berita);
 
 	function splitTextToParagraphs($text, $sentenceCountPerParagraph = 50) {
@@ -307,20 +308,10 @@
 			<!-- Page Banner -->
 			<div class="page-banner contact-banner container-fluid no-padding">
 				<div class="page-banner-content">
-<<<<<<< HEAD
-					<h3> Dari  Fakta <span> Hingga tren </span></h3>
-					<p>Berita terkini dan terbaru dari peristiwa, kecelakaan, hukum, berita unik yang terjadi di Kota Cimahi </P>
-					<!-- <div class="section-header">
-							<h3>RSUD<span>CIBABAT</span></h3>
-							<p>Fasilitas yang terdapat di RSUD Cibabat Cimahi</p> -->
-					<div class="banner-content container-fluid no-padding">
-				<!-- <p>Berita terkini dan terbaru dari peristiwa, kecelakaan, hukum, berita unik yang terjadi di Kota Cimahi </P> -->
-=======
 					<h3>News <span>Updates</span></h3>
 					<p><?php echo $berita['caption'];?></p>
 				</div>
 				<div class="banner-content container-fluid no-padding">
->>>>>>> 27112ea671826ebf13d67efe44b431ba91de21ee
 					<div class="container">
 						<ol class="breadcrumb">
 							<li><a href="index.html">Home</a></li>							
@@ -397,17 +388,24 @@
 							<!-- About Author -->
 							<div class="about-author">
 								<h3 class="section-title"><i class="icon icon-User"></i>About <span>Author</span></h3>
+								<?php
+									foreach ($author as $c) :
+								?>
 								<div class="author-content">
-									<i><img src="http://placehold.it/170x160" alt="about-author" /></i>
-									<h5>Martin Stewak<span>CEO - Healthkare.,</span></h5>
+								<!-- <img src="assets/images/dent1.jpg" alt="gallery"> -->
+									<i><img src="assets/images/rose.jpg" alt="about-author" /></i>
+									<h5><?php echo $c ['nama'];?><span><?php echo $c ['jabatan'];?></span></h5>
 									<ul>
 										<li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
 										<li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
 										<li><a href="#" title="Google"><i class="fa fa-google-plus"></i></a></li>
 										<li><a href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
 									</ul>
-									<p>Their very best to make the others comfortable in their tropic island nest know where you were then girls were girls and men were men mister we could use a man like herbert hoover again would see the biggest gift would be from me and the card said that.</p>
+									<p><?php echo $c ['bio']?></p>
 								</div>
+								<?php
+									endforeach;
+								?>
 							</div><!-- About Author /- -->
 							
 							<!-- Comment Area -->
