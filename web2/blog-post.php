@@ -2,11 +2,13 @@
 	require 'function.php';
     $id_berita = $_GET["id_berita"];
     $berita = query("SELECT * FROM berita WHERE id_berita = $id_berita")[0];
-    $author = query("SELECT * FROM author");
-    $komentar = query("SELECT * FROM komentar");
+	$id_author = $berita['id_author'];
+    $author = query("SELECT * FROM author WHERE id_author = $id_author")[0];
+    $komentar = query("SELECT * FROM komentar WHERE id_berita = $id_berita");
+	$jumlah_komentar = count($komentar);
 	// $result    =mysqli_fetch_array($berita);
 
-if(isset($_POST["submit"])) {
+	if(isset($_POST["submit"])) {
         // jalankan fungsi tambah()
         if(komentar($_POST) > 0) {
             echo "<script>
@@ -380,9 +382,9 @@ if(isset($_POST["submit"])) {
 									</ul>
 									<p>The first mate and his Skipper too will do their very best to make the others comfortable in their tropic island nest know where you were then girls were girls and men were men mister we could use a man like herbert hoover again would see the biggest gift would be from me and the card said that who was busy with three boys of his own.</p>
 									<div class="entry-meta"> 
-										<div class="post-date"><a href="#" title="Date"><i class="fa fa-calendar"></i>03 Feb 2017</a></div>
+										<div class="post-date"><a href="#" title="Date"><i class="fa fa-calendar"></i><?php echo $berita['tgl'];?></a></div>
 										<div class="byline"><a href="#" title="adminol"><i class="fa fa-user"></i>Admin</a></div>
-										<div class="post-comment"><a href="#" title="12 Comments"><i class="fa fa-comments-o"></i>12 Comments</a></div>
+										<div class="post-comment"><a href="#" title="12 Comments"><i class="fa fa-comments-o"></i><?php echo $jumlah_komentar ?> Comments</a></div>
 										<div class="post-like"><a href="#" title="Favorites 18"><i class="fa fa-heart-o"></i>Favorites 18</a></div>
 										<div class="post-share">
 											<span><i class="fa fa-share-alt"></i>Share</span>
@@ -399,24 +401,18 @@ if(isset($_POST["submit"])) {
 							<!-- About Author -->
 							<div class="about-author">
 								<h3 class="section-title"><i class="icon icon-User"></i>About <span>Author</span></h3>
-								<?php
-									foreach ($author as $c) :
-								?>
 								<div class="author-content">
 								<!-- <img src="assets/images/dent1.jpg" alt="gallery"> -->
-									<i><img src="assets/images/rose.jpg" alt="about-author" /></i>
-									<h5><?php echo $c ['nama'];?><span><?php echo $c ['jabatan'];?></span></h5>
+									<i><img src="assets/images/<?php echo $author ['foto'];?>" alt="about-author" /></i>
+									<h5><?php echo $author ['nama'];?><span><?php echo $author ['jabatan'];?></span></h5>
 									<ul>
 										<li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
 										<li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
 										<li><a href="#" title="Google"><i class="fa fa-google-plus"></i></a></li>
 										<li><a href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
 									</ul>
-									<p><?php echo $c ['bio']?></p>
+									<p><?php echo $author ['bio']?></p>
 								</div>
-								<?php
-									endforeach;
-								?>
 							</div><!-- About Author /- -->
 							
 							<!-- Comment Area -->
@@ -441,7 +437,7 @@ if(isset($_POST["submit"])) {
 												</div>
 											</footer>
 											<div class="comment-content">
-												<p>Today still wanted by the government they survive as soldiers of fortune. Thank you for being a friend to Travelled down the road and back again. Your heart is true you are.</p>
+												<p><?php echo $tokomen ['komentar'];?></p>
 											</div>
 										</div>
 									</li>
@@ -454,6 +450,8 @@ if(isset($_POST["submit"])) {
 									<h3 id="reply-title" class="comment-reply-title section-title"><i class="icon icon-Typing"></i>Your <span>Comments</span></h3>
 									<form method="post" id="commentform" class="comment-form">
 										<input type="hidden" name="id_komentar">
+										<input type="hidden" name="tgl">
+										<input type="hidden" name="id_berita" value="<?php echo $berita['id_berita'];?>">
 										<p class="comment-form-author">
 											<input id="author" name="nama" placeholder="Your Name" required="required" type="text"/>
 										</p>
@@ -463,7 +461,6 @@ if(isset($_POST["submit"])) {
 										<p class="comment-form-comment">
 											<textarea id="comment" name="komentar" placeholder="Write Your Comments..." rows="8" required="required"></textarea>
 										</p>
-										<input type="hidden" name="tgl" value="2023-11-25">
 										<p class="form-submit">
 											<input name="submit" class="submit" title="Post Comment" value="Post Comment" type="submit"/>
 										</p>

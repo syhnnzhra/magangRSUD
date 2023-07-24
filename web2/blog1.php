@@ -1,9 +1,11 @@
 <?php
     require 'function.php';
     $news = query("SELECT * FROM berita");
-    // if(isset($_POST["cari"])) {
-    //     $dokter = caridokter($_POST["keyword"]);
-    // }
+	$query = query("SELECT k.id_berita, COUNT(k.id_komentar) AS jumlah_komentar FROM komentar AS k  JOIN berita AS b ON k.id_berita = b.id_berita WHERE k.id_berita = b.id_berita GROUP BY k.id_berita");
+	foreach ($query as $result) {
+		$id_berita = $result['id_berita'];
+		$jumlah_komentar = $result['jumlah_komentar'];
+	}
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
@@ -338,7 +340,7 @@
 								<div class="entry-meta"> 
 									<div class="post-date"><a href="#" title="Date"><i class="fa fa-calendar"></i><?php echo $a ['tgl'];?></a></div>
 									<div class="byline"><a href="#" title="adminol"><i class="fa fa-user"></i>Admin</a></div>
-									<div class="post-comment"><a href="#" title="12 Comments"><i class="fa fa-comments-o"></i>12 Comments</a></div>
+									<div class="post-comment"><a href="#" title="12 Comments"><i class="fa fa-comments-o"></i><?php echo $jumlah_komentar; ?> Comments</a></div>
 									<div class="post-like"><a href="#" title="Favorites 18"><i class="fa fa-heart-o"></i>Favorites 18</a></div>
 									<div class="post-share">
 										<span><i class="fa fa-share-alt"></i>Share</span>
